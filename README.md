@@ -25,8 +25,67 @@ LANGSMITH_API_KEY=
 ```
 2. Run the main script:
 ```
-python main.py
-```
+You will need at least two (or three, if using ngrok) separate terminal windows for this.
+
+Start the FastAPI Backend:
+
+Open a new terminal window.
+
+Navigate to the backend directory:
+
+Bash
+
+cd C:\Users\SAADB\Desktop\Code\BlackboardProject\backend
+Activate your Python virtual environment (if you created one):
+
+Bash
+
+.\venv\Scripts\activate # On Windows
+# source venv/bin/activate # On macOS/Linux
+Run the FastAPI application using Uvicorn:
+
+Bash
+
+uvicorn main:app --reload --port 8000
+Keep this terminal open. You should see Uvicorn running on http://127.0.0.1:8000.
+
+(Optional) Expose Backend with ngrok (for Public Access):
+If you want your chatbot to be accessible from other devices or over the internet:
+
+Ensure ngrok is installed and authenticated on your system (refer to ngrok's official documentation for setup).
+
+Open a separate, new terminal window.
+
+Run ngrok, providing the full path to ngrok.exe if it's not in your system's PATH:
+
+Bash
+
+"C:\Users\SAADB\anaconda3\envs\saad\Scripts\ngrok.exe" http 8000
+Look for the Forwarding line in the ngrok output. It will provide an https:// URL (e.g., https://abcdef12345.ngrok-free.app). Copy this URL.
+
+Keep this terminal open.
+
+Update frontend/.env.local:
+Go back to your frontend/.env.local file and replace http://localhost:8000 with the copied ngrok https:// URL. Save the file.
+
+Start the Next.js Frontend:
+
+Open a third terminal window.
+
+Navigate to the frontend directory:
+
+Bash
+
+cd C:\Users\SAADB\Desktop\Code\BlackboardProject\frontend
+Start the Next.js development server:
+
+Bash
+
+npm run dev
+The terminal will show the local URL (e.g., http://localhost:3000 or http://localhost:3001).
+
+Access the Chatbot
+Open your web browser and go to the URL provided by the npm run dev command (e.g., http://localhost:3001).```
 
 ## API
 
