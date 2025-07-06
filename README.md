@@ -57,7 +57,7 @@ Open a separate, new terminal window.
 Run ngrok, providing the full path to ngrok.exe if it's not in your system's PATH:
 
 ```
-"C:\Users\SAADB\anaconda3\envs\saad\Scripts\ngrok.exe" http 8000
+"C:\Users\...\ngrok.exe" http 8000
 ```
 
 Look for the Forwarding line in the ngrok output. It will provide an https:// URL (e.g., https://abcdef12345.ngrok-free.app). Copy this URL.
