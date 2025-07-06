@@ -136,13 +136,3 @@ def clean_announcement(raw_text, course_id_param: str = None, course_url_param: 
             buffer.append(line)
 
     return announcements
-
-
-# from qdrant_client import QdrantClient
-
-# qdrant_client = QdrantClient(
-#     url="https://7bc6eb6c-b639-4f2d-872b-a8221387ac60.europe-west3-0.gcp.cloud.qdrant.io:6333", 
-#     api_key="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.sPatmPoSjAcCEWYD0cxc40dUhEWUGytq5SH13WY1mzw",
-# )
-
-# print(qdrant_client.get_collections())
